@@ -21,4 +21,19 @@ devDependencies
 
 ## Frontend
 
-ReactJS
+* ReactJS
+* socket.io-client  v^4.7.0
+
+If you want to deploy frontend & backend at the same Domain. 
+Then add this at the vite.config.js
+
+```js
+    server:{
+        proxy:{
+            '/socket.io':{
+                target: 'http://localhost:4000/',
+                ws:true,
+            }
+        }
+    }
+```
